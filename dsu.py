@@ -7,8 +7,8 @@ m = len(edges)
 for i in range(len(edges)):
 	edges[i].append(i)
 edges.sort(key = lambda edges: edges[2])
- 
- 
+
+
 parent=[-1]*n
 def findp(u):
 	if(parent[u]<0):
@@ -19,7 +19,7 @@ def find_parent(u):
 	if(u!=p):
 		parent[u]=p
 	return p
- 
+
 def union(u,v):
 	p1=find_parent(u)
 	p2=find_parent(v)
@@ -32,7 +32,7 @@ def union(u,v):
 		parent[p2]+=parent[p1]
 		parent[p1]=p2
 	return True
- 
+
 ans=0
 for i in range(len(edges)):
 	if(union(edges[i][0],edges[i][1])):
